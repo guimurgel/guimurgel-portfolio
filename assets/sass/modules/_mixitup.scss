@@ -1,0 +1,256 @@
+// ====================================================================
+// Loading
+// ====================================================================
+
+.mixitup {
+
+    //BUTTON
+    button {
+        background: transparent;
+        border-radius: 0;
+        border: 0;
+        padding: 0;
+    
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+    
+        user-select: none;
+
+        &:focus {
+            outline: 0 none;
+        }
+    }
+
+    /* 
+    ---------------------------------------------------------------------- 
+    Controls
+    ---------------------------------------------------------------------- 
+    */
+    .controls {
+        padding: 1rem;
+        background: #333;
+        font-size: 0.1px;
+
+        .control {
+            position: relative;
+            display: inline-block;
+            width: 2.7rem;
+            height: 2.7rem;
+            background: #444;
+            cursor: pointer;
+            font-size: 0.1px;
+            color: white;
+            transition: background 150ms;
+            
+            &:hover {
+                background: #3f3f3f;
+            }
+
+            &[data-filter]:after {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: calc(50% - 6px);
+                left: calc(50% - 6px);
+                border: 2px solid currentColor;
+                border-radius: 2px;
+                background: currentColor;
+                transition: background-color 150ms, border-color 150ms;
+            }
+
+            &[data-sort]:after {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-top: 2px solid;
+                border-left: 2px solid;
+                top: calc(50% - 6px);
+                left: calc(50% - 6px);
+                transform:  translateY(1px) rotate(45deg);
+            }
+
+            &[data-sort*=":desc"]:after {
+                transform:  translateY(-4px) rotate(-135deg);
+            }
+
+            &.mixitup-control-active {
+                background: #393939;
+
+                &[data-filter]:after {
+                    background: transparent;
+                }
+            }
+
+            &:first-of-type {
+                border-radius: 3px 0 0 3px;
+            }
+
+            &:last-of-type {
+                border-radius: 0 3px 3px 0;
+            }
+
+            &[data-filter] + &[data-sort] {
+                margin-left: .75rem;
+            }
+
+            &[data-filter=".green"] {
+                color: #91e6c7;
+            }
+
+                
+        }
+    }
+
+    /* 
+    ---------------------------------------------------------------------- 
+    Grid Breakpoints
+    ---------------------------------------------------------------------- 
+    */
+    .gallery {
+
+        .mix {
+            width: calc(100%/3);
+
+            
+            @include breakpoint('tiny') {
+                width: calc(100%/2);
+            }
+
+            @include breakpoint('mini') {
+                width: calc(100%/2);
+            }
+
+            @media (max-width: 320px) {
+                width: calc(100%/1);
+            }
+        }
+
+    }
+
+    /* 
+    ---------------------------------------------------------------------- 
+    Grid Breakpoints
+    ---------------------------------------------------------------------- 
+    */    
+    .column-counter {
+        font-size: 3px;
+
+        @include breakpoint('tiny') {
+            font-size: 2px;
+        }
+        @include breakpoint('mini') {
+            font-size: 2px;
+        }
+        @media (max-width: 320px) {
+            font-size: 1px;
+        }
+    }
+
+
+    /* 
+    ---------------------------------------------------------------------- 
+    Pagination Controls
+    ---------------------------------------------------------------------- 
+    */
+    .controls-pagination {
+        padding: 1rem;
+        font-size: 0.1px;
+        text-align: justify;
+
+        margin: 0 0 5rem 0;
+
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+
+        .mixitup-page-list,
+        .mixitup-page-stats {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .mixitup-page-list {
+            text-align: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-width: 100%;
+
+            .mixitup-control {
+                position: relative;
+                display: inline-block;
+                text-align: center;
+                width: 4rem;
+                height: 4rem;
+                background: #fff;
+                border: 1px solid #f2f2f2;
+                cursor: pointer;
+                font-size: .9rem;
+                color: #333;
+                font-weight: bold;
+                font-family: 'helvetica', arial, sans-serif;
+                transition: color 150ms, border-color 150ms;
+                vertical-align: middle;
+
+                &:first-child {
+                    border-radius: 3px 0 0 3px;
+                }
+
+                &:last-child {
+                    border-radius: 0 3px 3px 0;
+                }
+
+                &:not(.mixitup-control-active,.mixitup-control-prev,.mixitup-control-next):hover {
+                    color: #00ccf3;
+                }
+
+                &:disabled {
+                    background: #eaeaea;
+                    color: #aaa;
+                    cursor: default;
+                }
+            }
+
+            .mixitup-control-prev, .mixitup-control-next {
+                font-size: 1.5rem;
+                background: #01ccf3;
+                opacity: 0.5;
+                color: #fff;
+                transition: opacity .3s ease-in-out;
+                border: 0;
+
+                &:hover {
+                    opacity: 1;
+                    color: #fff;
+                }
+            }
+
+            .mixitup-control-active {
+                border-bottom-color: #00ccf3;
+                cursor: default;
+            }
+
+            .mixitup-control-truncation-marker {
+                background: transparent;
+                pointer-events: none;
+                line-height: 2.2em;
+            }
+
+        }
+
+        .mixitup-page-stats {
+            display: none;
+            font-size: 1.3rem;
+            color: #333;
+            font-weight: bold;
+            font-family: 'helvetica', arial, sans-serif;
+        }
+    }
+
+
+}

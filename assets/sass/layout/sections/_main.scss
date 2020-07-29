@@ -1,0 +1,122 @@
+// ====================================================================
+// Main
+// ====================================================================
+
+section {
+    
+    .disable-hover {
+        pointer-events: none;
+    }
+
+    .waypoint {
+        opacity: 0;
+    }
+    
+    //Title
+    div.title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        width: 100%;
+        height: auto;
+        margin: 2rem 0 5rem 0;
+
+        h1 {
+        
+            font-size: 5rem;
+            color: #444649;
+            font-weight: 600;
+            text-align: center;
+        
+        }
+        
+        > div {
+            display: block;
+            min-width: 7rem;
+            height: 4px;
+            animation-delay: .5s;
+            background-color: #444649;
+        }
+
+        &.white {
+            h1 {
+                color: #fff;
+            }
+            div {
+                background-color: #fff;
+            }
+        }
+
+    }
+
+    .scroll-downs {
+        position: fixed;
+        bottom: -1.5rem;
+        z-index: 1;
+      }
+      .mousey {
+        width: 3px;
+        height: 30px;
+        padding: 5px 10px;
+        border: 2px solid #fff;
+        border-radius: 25px;
+        opacity: 0.75;
+        box-sizing: content-box;
+      }
+      .scroller {
+        width: 3px;
+        height: 10px;
+        border-radius: 25%;
+        background-color: #fff;
+        animation-name: scroll;
+        animation-duration: 2.2s;
+        animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+        animation-iteration-count: infinite;
+      }
+      @keyframes scroll {
+        0% { opacity: 0; }
+        10% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(15px); opacity: 0;}
+      }
+
+      
+     
+
+}
+
+
+.return-to-top {
+    position: absolute;
+    left: 50%;
+    background-color: rgba(0,204,243,0.5);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    border-radius: 35px;
+    display: none;
+    transform: translate(-50%, -100%);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: rgba(0,204,243,1);
+    }
+
+    i {
+        color: #fff;
+        margin: 0;
+        position: relative;
+        left: 16px;
+        top: 13px;
+        font-size: 19px;
+        transition: all 0.3s ease;
+
+        &:hover i{
+            color: #fff;
+            top: 5px;
+        }
+    }
+}

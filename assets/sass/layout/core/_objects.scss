@@ -1,0 +1,161 @@
+// ====================================================================
+// Objects
+// ====================================================================
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	
+	width: calc(100%);
+	min-height: calc(100vh);
+
+	background: #FFFFFF;
+	position: relative;
+	overflow-x: hidden;
+
+}
+
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	width: 100%;
+	height: auto;
+	position: relative;
+	
+	
+	//Geral
+	&#home,
+	&#skills,
+	&#portfolio,
+	&#about,
+	&#contact {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		height: auto;
+		min-height: calc(100vh);
+	}
+
+	&#contact {
+		padding: 0 0 20px 0;
+		min-height: calc(100vh - 70px);
+	}
+
+}
+
+.dots {
+
+	&:before {
+	  content: '';
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  z-index: 0;
+	  box-shadow: inset 0 50px 250px rgba(0,0,0,0.75);
+	  //background-color: rgba(0,0,0,0.75);
+	  background-color: #343a40;
+
+	  background-image: url('../img/shared/dots.png');
+	  background-size: 3px 3px;
+	  
+	}
+}
+
+.parallax {
+	position: relative;
+    background-color: #343a40;
+    color: rgba(222,226,230,0.5);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.parallax.dots::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.75);
+}
+
+//Helpers
+.scroll-lock {
+	overflow: hidden;
+	-moz-overflow:hidden;
+}
+
+.desk {
+	display: none;
+	@include breakpoint (normal-plus) {
+		display: block;
+	}
+}
+
+.mobile {
+	display: block;
+	@include breakpoint (normal-plus) {
+		display: none;
+	}
+}
+
+.disable {
+	display: none !important;
+}
+
+.blur {
+	filter: blur(3px);
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		display: block;
+		background: rgba(255, 255, 255, 0.5);
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+}
+
+.ratio {
+	display: block;
+	width: 100%;
+}
+
+//button
+.btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #00ccf3 !important;
+	background-color: #00ccf3 !important;
+	width: 100%;
+	height: 50px;
+	margin: 0 0 !important;
+	padding: 0 0 !important;
+	color: #FFF !important;
+	opacity: 0.7;
+	transition: opacity .3s ease-in-out;
+
+	&:hover {
+		opacity: 1;
+	}
+
+}

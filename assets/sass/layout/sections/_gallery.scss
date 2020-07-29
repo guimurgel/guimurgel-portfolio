@@ -1,0 +1,434 @@
+// ====================================================================
+// Gallery
+// ====================================================================
+#gallery {
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+	right: 0;
+	bottom: 0;
+    left: 0;
+    
+    width: 100vw;
+    pointer-events: none;
+    z-index: 100;
+
+
+    &.visible {
+        pointer-events: initial;
+        .mask-g {
+            //height: 100%;
+            //width: 100%;
+            opacity: 1;
+        }
+        .gallery-wrap {
+            transform: scale(1);
+        }
+    }
+
+    //Mask
+    .mask-g {
+
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: all .3s;
+        z-index: 0;
+    }
+
+    .close-g {
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+        color: #999;
+        border: 1px solid #fafafa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #1f2024;
+        @include transition(all .3s ease);
+        z-index: 1;
+        
+        @media (max-width: 320px) {
+            top: -12px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            border: 1px solid #fff;
+            color:  #fff;
+        }
+
+        i {
+            color:  #fff;
+        }
+
+    }
+
+    //Gallery
+    .gallery-wrap {
+
+        position: absolute;
+        width: 900px;
+        //width: 1170px;
+        height: auto;
+        background: #fff;
+        //box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+        border-radius: 2px;
+        transform: scale(0.8);
+        
+        transition: transform .5s;
+
+        //Slick
+        .carousel {
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            //max-height: 415px;
+
+            //Slick
+            .slick-dotted.slick-slider {
+                margin-bottom: 0;
+
+                //Arrow
+                .slick-arrow {
+                    z-index: 1;
+                    width: auto;
+                    height: 10rem;
+                    background: #2194cd;
+                    opacity: .5;
+                    //box-shadow: 0 0 3px 0 rgba(000,000,000,0.5);
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &:before, &:after {
+                        font-family: 'Font Awesome\ 5 Free';
+                        font-weight: 900;
+                        font-size: 1.5rem;
+                        padding: 0 0.5rem;
+                    }
+
+                    &.slick-prev {
+                        left: 0;
+                        border-radius: 0 0.5rem 0.5rem 0;
+                        &:before {
+                            content: '\f060';
+                        }
+                        
+                    }
+                    &.slick-next {
+                        right: 0;
+                        border-radius: 0.5rem 0 0 0.5rem;
+                        &:before {
+                            content: '\f061';
+                        }
+                    }
+                    
+                }
+
+                //Dots
+                .slick-dots {
+                    position: relative;
+                    bottom: auto;
+                    display: flex;
+
+                    li {
+                        width: calc(100%);
+                        height: 0.7rem;
+                        margin: 0;
+                        border-right: 1px solid #eee;
+
+                        &:last-of-type {
+                            border-right: none;
+                        }
+                        button {
+                            padding: 0;
+                            width: 100%;
+                            height: 100%;
+                            //background-color: #eeeeee;
+                            background-color: #2194cd;
+                            opacity: 0.5;
+                            &:before {
+                                display: none;
+                            }
+                        }
+
+                        &.slick-active {
+                            button {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            //Itens
+            .itens {
+
+                position: relative;
+                width: 100%;
+
+                .item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    width: 100%;
+                   // height: 357px;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        //max-height: 415px;
+                    }
+                        
+                    // &:nth-of-type(1) {
+                    //     background: lightcoral;
+                    // }
+                    // &:nth-of-type(2) {
+                    //     background: lightblue;
+                    // }
+                    // &:nth-of-type(3) {
+                    //     background: lightgreen;
+                    // }
+                    // &:nth-of-type(4) {
+                    //     background: lightgoldenrodyellow;
+                    // }
+                    // &:nth-of-type(5) {
+                    //     background: red;
+                    // }
+                    // &:nth-of-type(6) {
+                    //     background: blue;
+                    // }
+                    // &:nth-of-type(7) {
+                    //     background: purple;
+                    // }
+                    // &:nth-of-type(8) {
+                    //     background: green;
+                    // }
+                }
+
+            }
+        }
+
+        //Information
+        div.informations {
+
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 2rem;
+
+            //top
+            div.top {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                width: 100%;
+                height: auto;
+                position: relative;
+
+                margin: 0 0 1rem 0;
+                padding: 0 0 1rem 0;
+                border-bottom: 1px solid #eee;
+
+                @include breakpoint ('mini') {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                //Names
+                div.name {
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    position: relative;
+
+                    @include breakpoint ('mini') {
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+
+                    h2 {
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                        margin: 0;
+                        width: auto;
+                        padding: 0.3rem 2rem 0.3rem 2rem;
+                        background-color: #2194cd;
+                        position: relative;
+                        left: -2rem;
+                        color: #fff;
+                        border-radius: 0 1rem 0 0;
+
+                        @include breakpoint ('mini') {
+                            border-radius: 0 1rem 1rem 0;
+                            font-size: 1.5rem;
+                        }
+
+                        @media (max-width: 320px) {
+                            font-size: 1.1rem;
+                        }
+                    }
+                    span {
+                        color: #fff;
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+
+                    a.visit {
+                        //font-family: 'BebasNeue';
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        width: auto;
+                        padding: 0.5rem 2rem 0.5rem 2rem;
+                        text-transform: uppercase;
+                        background-color: #2194cd;
+                        position: relative;
+                        left: -2rem;
+                        color: #fff;
+                        border-radius: 0 1rem 0 0;
+                        margin: 1rem 0;
+
+                        @include breakpoint ('mini') {
+                            margin: 0;
+                            border-radius: 1rem 0 0 1rem;
+                            right: -2rem;
+                            left: auto;
+                            font-size: 1rem;
+                        }
+
+                        &:before {
+                            content: '\f0c1';
+                            font-family: 'Font Awesome\ 5 Free';
+                            font-weight: 900;
+                            margin: 0 0.5rem 0 0;
+                            font-size: 1.1rem;
+
+                            @include breakpoint ('mini') {
+                                font-size: 0.8rem;
+                            }
+    
+                        }
+                    }
+
+                }
+
+                //Skills
+                div.technologies {
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+                    position: relative;
+
+                    @include breakpoint ('mini') {
+                        width: 100%;
+                        justify-content: center;
+                        margin: 2rem 0 1rem 0;
+                    }
+
+                    i {
+                        width: 4rem;
+                        height: 4rem;
+                        background-color: #eee;
+                        border-radius: 50%;
+                        background-position: center;
+                        background-size: 80%;
+                        background-repeat: no-repeat;
+                        margin: 0 1rem;
+
+                        &.html {
+                            background-image: url('../img/skills/html-5.png');
+                        }
+                        &.css {
+                            background-image: url('../img/skills/css-3.png');
+                        }
+                        &.js {
+                            background-image: url('../img/skills/javascript.png');
+                        }
+                        &.vuejs {
+                            background-image: url('../img/skills/vuejs.png');
+                        }
+                        &.angular {
+                            background-image: url('../img/skills/angular.png');
+                        }
+                        &.react {
+                            background-image: url('../img/skills/react.png');
+                        }
+                        &.git {
+                            background-image: url('../img/skills/git.png');
+                        }
+                        &.automacao-front-end {
+                            background-image: url('../img/skills/automacao-front-end.png');
+                        }
+                        &.cordova {
+                            background-image: url('../img/skills/cordova.png');
+                        }
+                        &.c-sharp {
+                            background-image: url('../img/skills/c-sharp.png');
+                        }
+                        &.pl-sql {
+                            background-image: url('../img/skills/pl-sql.png');
+                        }
+                        &.git {
+                            background-image: url('../img/skills/git.png');
+                        }
+                        &.php {
+                            background-image: url('../img/skills/php.png');
+                        }
+                        &.node-js {
+                            background-image: url('../img/skills/node-js.png');
+                        }
+                    }
+
+
+
+                }
+            }
+
+            //Text
+            p.text {
+                font-size: 1.4rem;
+                margin: 0;
+
+                @include breakpoint('mini') {
+                    font-size: 1.2rem;
+                }
+            }
+
+        }
+
+    }
+
+
+
+}

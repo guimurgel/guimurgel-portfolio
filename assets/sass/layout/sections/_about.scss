@@ -1,0 +1,421 @@
+// ====================================================================
+// About
+// ====================================================================
+section#about {
+
+    background-image: url('../img/shared/codea.png');
+
+    div.wrap {
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 0 4rem 0;
+
+        @include breakpoint ('mini') {
+            flex-direction: column-reverse;
+        }
+
+        
+        //With Skills
+        &.wt-skills {
+
+            @include breakpoint ('mini') {
+    
+                & > div {
+                    &:nth-of-type(1) { order: 1; }
+                    &:nth-of-type(2) { order: 3; }
+                    &:nth-of-type(3) { order: 2; }
+                }
+                
+            }
+
+            div.about-me {
+                width: calc(60% - 2rem);
+                margin: 0 2rem 0 0;
+
+                @include breakpoint ('tiny-m') {
+                    width: 100%;
+                    margin: 0 3rem 5rem 3rem;
+                }
+    
+                @include breakpoint ('mini') {
+                    width: 100%;
+                    margin: 0 0 5rem 0;
+                }
+    
+                .descripition {
+                    width: 50%;
+                    padding: 0 3rem;
+
+                    @include breakpoint ('tiny-m') {
+                        width: 100%;
+                    }
+    
+                    @include breakpoint ('mini') {
+                        width: 100%;
+                    }
+    
+                    p {
+                        font-size: 1.6rem;
+                    }
+                }
+    
+                .avatar {
+                    width: 50%;
+
+                    @include breakpoint ('tiny-m') {
+                        width: 100%;
+                    }
+    
+                    @include breakpoint ('mini') {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+
+        //Priorities
+        div.priorities {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+
+            width: 100%;
+            position: relative;
+            margin: 2rem 0 5rem 0;
+
+            @include breakpoint ('mini') {
+                margin: 5rem 0 5rem 0;
+            }
+
+            div.item {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap-reverse;
+                
+                width: calc(100% / 4);
+                position: relative;
+                text-align: center;
+
+                padding: 0 1rem;
+
+                @include breakpoint ('tiny-m') {
+                    width: calc(100% / 2);
+                    padding: 0 3rem;
+                    margin-bottom: 3rem;
+                }
+
+                @include breakpoint ('mini') {
+                    padding: 0 1rem;
+                }
+
+                .icon {
+                    width: 150px;
+                    height: 150px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    background-color: rgba(37, 41, 52, 1);
+                    box-shadow: 0px 0px 5px 1px rgba(000,000,000,0.2);
+
+                    @include breakpoint ('mini') {
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                    i {
+                        color: #fff;
+                        font-size: 6rem;
+
+                        &:nth-of-type(2) {
+                            font-size: 4rem;
+                            margin: 0 0 0 1rem;
+                        }
+
+                        @include breakpoint ('mini') {
+                            font-size: 4rem;
+                        }
+                    }
+                }
+
+                .title {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    //color: #45474a;
+                    color: #eee;
+                    margin: 1rem 0;
+
+                    @include breakpoint ('mini') {
+                        font-size: 2rem;
+                    }
+                }
+
+                .text {
+                    font-size: 1.4rem;
+                    //color: #616161;
+                    color: #eee;
+                    margin: 0;
+
+                    @include breakpoint ('mini') {
+                        font-size: 1rem;
+                    }
+
+                }
+
+            }
+        }
+
+        //About-me
+        div.about-me {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 100%;
+            position: relative;
+            height: 400px;
+            min-height: 300px;
+
+            background: #eee;
+            color: #fff;
+            background-color: rgba(37, 41, 52, 0.9);
+
+            @include breakpoint ('tiny-m') {
+                flex-direction: column-reverse;
+                margin: 0 auto;
+                width: calc(80%);
+                height: auto;
+            }
+
+            @include breakpoint ('mini') {
+                width: 100%;
+            }
+
+            div.descripition {
+
+                padding: 0 5rem;
+                width: 70%;
+                position: relative;
+                text-align: center;
+
+                @include breakpoint ('tiny-m') {
+                    width: 100%;
+                }
+
+                @include breakpoint ('mini') {
+                    padding: 0 2rem;
+                }
+
+                p {
+                    font-size: 2rem;
+                    @include breakpoint ('mini') {
+                        font-size: 1.6rem;
+                    }
+                }
+
+            }
+
+            div.avatar {
+                width: 30%;
+                height: 100%;
+                position: relative;
+               
+                background-image: url('../img/about/guimurgel-bw.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 5%;
+
+                @include breakpoint ('tiny-m') {
+                    width: 100%;
+                    height: 500px;
+                }
+
+                @include breakpoint ('mini') {
+                    height: 400px;
+                }
+            }
+        }
+
+        //Skills
+        div.skills {
+
+            display: flex;
+            flex-direction: column;
+            width: calc(40% - 2rem);
+            position: relative;
+            margin: 0 0 0 2rem;
+
+            @include breakpoint ('tiny-m') {
+                width: 100%;
+                margin: 0 3rem 0 3rem;
+            }
+
+            @include breakpoint ('mini') {
+                width: 100%;
+                margin: 0 0 5rem 0;
+            }
+            
+            h3 {
+
+                width: 100%;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+                color: #fff;
+                font-size: 2rem;
+                font-weight: 600;
+    
+                &:before, &:after {
+                    width: 45%;
+                    content: '';
+                    background: #eee;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 1px;
+                    position: relative;
+                }
+    
+                &:before {
+                    margin: 0 1.5rem;
+                }
+    
+                &:after {
+                    margin: 0 1.5rem;
+                }
+            }
+
+            div.skills-list {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: nowrap;
+                padding: 1rem 1rem;
+                background-color: rgba(37, 41, 52, .9);
+                height: 100%;
+                //border-radius: 1rem;
+
+                ul.list {
+
+                    display: flex;
+                    flex-direction: column;
+                    min-width: auto;
+    
+                    li {
+    
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+    
+                        width: auto;
+                        margin-bottom: 1rem;
+                        color: #FFF;
+                        font-size: 1.6rem;
+                        font-weight: 600;
+
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+    
+                        &:before {
+                            content: '';
+                            display: inline-flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: relative;
+                            margin-right: 1.5rem;
+    
+                            width: 45px;
+                            height: 45px;
+    
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            
+                        }
+    
+                        &.html5 {
+                            &:before {
+                                background-image: url('../img/skills/html-5.png');
+                            }
+                        }
+                        &.css3 {
+                            &:before {
+                                background-image: url('../img/skills/css-3.png');
+                            }
+                        }
+                        &.javascript {
+                            &:before {
+                                background-image: url('../img/skills/javascript.png');
+                            }
+                        }
+                        &.vuejs {
+                            &:before {
+                                background-image: url('../img/skills/vuejs.png');
+                            }
+                        }
+                        &.angular {
+                            &:before {
+                                background-image: url('../img/skills/angular.png');
+                            }
+                        }
+                        &.react {
+                            &:before {
+                                background-image: url('../img/skills/react.png');
+                            }
+                        }
+                        &.git {
+                            &:before {
+                                background-image: url('../img/skills/git.png');
+                            }
+                        }
+                        &.front-end {
+                            &:before {
+                                background-image: url('../img/skills/automacao-front-end.png');
+                            }
+                        }
+                        &.cordova {
+                            &:before {
+                                background-image: url('../img/skills/cordova.png');
+                            }
+                        }
+                        &.c-sharp {
+                            &:before {
+                                background-image: url('../img/skills/c-sharp.png');
+                            }
+                        }
+                        &.pl-sql {
+                            &:before {
+                                background-image: url('../img/skills/pl-sql.png');
+                            }
+                        }
+                        &.adobe {
+                            &:before {
+                                background-image: url('../img/skills/adobe.png');
+                            }
+                        }
+                        
+    
+                    }
+    
+                }
+            }
+
+        }
+    }
+}

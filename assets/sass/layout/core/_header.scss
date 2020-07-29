@@ -1,0 +1,213 @@
+// ====================================================================
+// Header
+// ====================================================================
+header {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+
+    background: #1f2024;
+    box-shadow: 0 0 5px 0 #000;
+    z-index: 10;
+    //border-bottom: 2px solid #00ccf3;
+
+    &.fixed {
+        top: 0;
+        bottom: inherit;
+        left: 0;
+        position: fixed;
+        animation: popDown .2s;
+    }
+
+    &.wl {
+        div.container {
+            display: flex;
+            justify-content: space-between;
+
+            //Logo
+            a.logo {
+                display: block;
+            }
+            //Menu
+            nav.main-menu {
+                width: auto;
+            }
+        }
+    }
+
+    div.container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        
+        //Mobile
+        input#mobile-menu {
+
+            display: none;
+        }
+
+        input ~ label {
+
+            display: none;
+            margin: 0 2rem;
+            cursor: pointer;
+            transition: transform .3s ease-in-out;
+            position: absolute;
+            left: 0;
+            z-index: 1;
+
+            @include breakpoint ('mini') {
+                display: block;
+            }
+
+            &:before {
+                
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                content: '\f0c9';
+                color: #fff;
+            }
+        }
+
+        input:checked ~ label {
+            transform: rotate(90deg);
+            &:before {
+                content: '\f00d';
+            }
+        }
+
+        //Logo
+        a.logo {
+
+            display: none;
+
+            img {
+                display: block;
+                width: 50px;
+            }
+        }
+
+        //Menu
+        nav.main-menu {
+                
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            @include breakpoint ('mini') {
+                position: absolute;
+                height: 100vh;
+                top: -100vh; 
+                right: 0;
+                background: #1f2024;
+                transition: top .2s ease-in-out;
+            }
+
+            &.active {
+                top: 0;
+            }
+
+            ul.menu {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                @include breakpoint ('mini') {
+                    flex-direction: column;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                li {
+
+                    margin: 0 1rem;
+
+                    @include breakpoint ('mini') {
+                        margin: 1rem 1rem;
+                        width: calc(100% - 2rem);
+                        text-align: center;
+                        height: 50px;
+                        line-height: 50px;
+                        border-radius: 5px;
+                        border: 1px solid #00ccf3;
+                        display: block;
+                    }
+
+                    &.active {
+                        a {
+                            color: #00ccf3;
+
+                            &:after {
+                                width: 100%;
+    
+                            }
+                        }
+                    }
+
+                    a {
+                        font-size: 1.2rem;
+                        color: #fff;
+                        //font-weight: 600;
+                        text-transform: uppercase;
+                        transition: color .3s ease-in-out;
+                        
+
+                        &:before {
+                            position: relative;
+                            top: 20px;
+                            display: block;
+                            width: 100%;
+                            content: '';
+                            opacity: .7;
+                            border-bottom: 1px solid #fff;
+
+                            @include breakpoint ('mini') {
+                                display: none;
+                            }
+                        }
+
+                        &:after {
+                            position: relative;
+                            display: block;
+                            width: 20%;
+                            min-width: 10px;
+                            content: '';
+                            border-bottom: 1px solid #00ccf3;
+                            transition: width .3s ease-in-out;
+                            @include breakpoint ('mini') {
+                                display: none;
+                            }
+                        }
+
+                        &:hover {
+                            color: #00ccf3;
+                        }
+
+                        &:hover:after {
+                            width: 100%;
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+   
+    }
+}

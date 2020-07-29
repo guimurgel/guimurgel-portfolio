@@ -1,0 +1,120 @@
+// ====================================================================
+// Skills
+// ====================================================================
+section#skills {
+
+    background: #f5f5f5;
+
+    .wrap-skills {
+
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around ;
+          
+          .skill {
+            width: calc(100% / 4);
+            margin: 2rem 0;
+
+            @include breakpoint ('tiny') {
+              width: calc(100% / 3);
+            }
+
+            @include breakpoint ('mini') {
+              width: calc(100% / 2);
+            }
+
+            
+          }
+          
+          .circular-chart {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 175px;
+
+            @include breakpoint ('mini') {
+              max-height: 130px;
+            }
+            
+          }
+          
+          .circle-bg {
+            fill: none;
+            stroke: #eee;
+            stroke-width: 3.8;
+          }
+          
+          .circle {
+            fill: none;
+            stroke-width: 2.8;
+            stroke-linecap: round;
+            //animation: progress 1s ease-out forwards;
+          }
+          
+          .circular-chart.html .circle {
+            stroke: #f1672c;
+          }
+          
+          .circular-chart.css .circle {
+            stroke: #30a9dc;
+          }
+          
+          .circular-chart.js .circle {
+            stroke: #f1bf26;
+          }
+
+          .circular-chart.vuejs .circle {
+            stroke: #41b883;
+          }
+
+          .circular-chart.angular .circle {
+            stroke: #dd1b16;
+          }
+
+          .circular-chart.react .circle {
+            stroke: #61dafb;
+          }
+
+          .circular-chart.git .circle {
+            stroke: #f05033;
+          }
+
+          .circular-chart.front-end .circle {
+            stroke: #8ed6fb;
+          }
+
+          .circular-chart.cordova .circle {
+            stroke: #33404d;
+          }
+
+          .circular-chart.adobe .circle {
+            stroke: #ff2bc3;
+          }
+
+          .circular-chart.c-sharp .circle {
+            stroke: #996bd5;
+          }
+
+          .circular-chart.pl-sql .circle {
+            stroke: #859ca4;
+          }
+
+          .circular-chart.php .circle {
+            stroke: #8993be;
+          }
+
+          .circular-chart.node-js .circle {
+            stroke: #669f64;
+          }
+          
+          .skill-icon {
+            width: 43%;
+          }
+
+          .skill-icon-square {
+            width: 60%;
+          }
+    }
+}

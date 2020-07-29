@@ -1,0 +1,309 @@
+// ====================================================================
+// Portfolio
+// ====================================================================
+section#portfolio {
+
+    background: #fff;
+    
+    .container {
+
+        //Gallery Container
+        .gallery-wrap {
+
+            //Filter
+            .filter-wrap {
+
+                position: relative;
+                width: fit-content;
+                margin: 2rem auto;
+
+                @include breakpoint ('mini') {
+                    width: 100%;
+                }
+
+                //Geral
+                .filter {
+                    margin: 0 25px;
+                    padding: 0 40px;
+                    font-size: 2rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background-color .5s;
+
+                    @include breakpoint ('mini') {
+                        margin: 0;
+                        padding: 0 30px;
+                        font-size: 1.4rem;
+                    }
+                }
+
+                div.list {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    @include breakpoint ('mini') {
+                        justify-content: space-between;
+                    }
+                }
+
+                div.float-bar {
+                    top: 0;
+                    bottom: 0;
+                    left: -30px;
+                    position: absolute;
+                    margin: auto 0;
+                    position: absolute;
+                    overflow: hidden;
+                    height: 30px;
+                    border-radius: 1px;
+                    background: #00ccf3;
+                    transition: all .5s ease-in-out;
+                    //opacity: 0.5;
+
+                    div.list-bar {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+
+                        top: 0;
+                        bottom: 0;
+                        left: -30px;
+                        position: absolute;
+                        margin: auto 0;
+                        transition: left .5s ease-in-out;
+
+                        .filter {
+                            color: #fff;
+                        }
+                    }
+              
+                }
+
+            }
+
+            //Gallery
+            .gallery {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                flex-wrap: wrap;
+
+                margin: 5rem 0 5rem 0;
+
+                //Slick
+                &.slick-slider {
+                    .slick-arrow {
+                        z-index: 1;
+                        &:before {
+                            font-size: 25px;
+                        }
+
+                        &.slick-prev {
+                            left: 5px;
+                        }
+                        &.slick-next {
+                            right: 5px;
+                        }
+                    }
+
+
+                }
+
+                .slick-dots {
+                    bottom: -30px;
+                    li {
+                        width: 10px;
+                        height: 10px;
+
+                        &.slick-active {
+                            button {
+                                opacity: 1;
+                            }
+                        }
+
+                        button {
+                            width: 10px;
+                            height: 10px;
+                            position: relative;
+                            border: 1px solid #eee;
+                            border-radius: 50%;
+                            background-color: #01ccf3;
+                            opacity: 0.5;
+                            padding: 0;
+
+                            &:before {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .mix {
+                    display: none;
+                    display: flex;
+                    position: relative;
+                    //width: calc(100% / 3);
+                    height: 300px;
+                    max-width: 100%;
+                    
+                    @include breakpoint ('mini') {
+                        height: 200px;
+                    }
+                    @media (max-width: 320px) {
+                        border-bottom: 1px solid #eee;
+                    }
+
+                    //HOVER
+                    &:hover {
+                        .card {
+                            .cover {
+                                opacity: 0.3;
+                            }
+                            .description {
+
+                                &:before {
+                                    opacity: 1;
+                                }
+
+                                h2.name {
+                                    opacity: 1;
+                                    top: 40%;
+                                }
+                                span.company {
+                                    opacity: 1;
+                                    bottom: 40%;
+                                }
+                            }
+                        }
+                    }
+
+                    //Card
+                    .card {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 100%;
+                        position: relative;
+
+                        cursor: pointer;
+                        transition: all .5s;
+
+
+                        //Cover Image
+                        div.cover {
+                            transform: scale(1);
+                            //background: #222;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            background-size: cover;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            opacity: 1;
+                            transition: opacity 0.5s ease-in-out;
+
+                            // @include breakpoint('mini') {
+                            //     border-radius: 1rem;
+                            //     box-shadow: 0 0 5px 0px rgba(0,0,0,0.3);
+                            // }
+                        }
+
+                        //Description
+                        .description {
+                            top: 0;
+                            left: 0;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 2;
+                            text-align: center;
+
+                            color: #1B242F;
+
+                            @include breakpoint ('mini') {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                height: auto;
+                                background: rgba(0, 0, 0, .75);
+                                top: auto;
+                                bottom: 0;
+                                display: flex;
+                                flex-direction: column;
+                                padding: 1rem 0;
+                                min-height: 60px;
+                                //border-radius: 0 0 1rem 1rem;
+                            }
+
+                            &:before {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                content: '';
+                                transition: opacity 0.3s ease-in-out;
+                                opacity: 0;
+                                background: rgba(0, 0, 0, .75);
+
+                                @include breakpoint ('mini') {
+                                    display: none;
+                                }
+                            }
+
+                            h2.name {
+                                color: #00ccf3;
+                                font-size: 2.2rem;
+                                font-weight: 600;
+                                position: absolute;
+                                top: 0;
+                                opacity: 0;
+                                margin: 0 auto;
+                                width: 100%;
+                                transition: all 0.3s ease-in-out;
+
+                                @include breakpoint('mini') {
+                                    opacity: 1;
+                                    position: relative;
+                                    font-size: 1.6rem;
+                                }
+                            }
+
+                            span.company {
+                                font-size: 1.8rem;
+                                font-weight: 600;
+                                position: absolute;
+                                bottom: 0;
+                                opacity: 0;
+                                color: #fff;
+                                left: 0;
+                                text-align: center;
+                                width: 100%;
+                                border: 0;
+                                transition: all 0.3s ease-in-out;
+                                @include breakpoint('mini') {
+                                    opacity: 1;
+                                    position: relative;
+                                    font-size: 1.4rem;
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
+ 
+        }
+    }
+}

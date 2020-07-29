@@ -1,0 +1,226 @@
+// ====================================================================
+// Form
+// ====================================================================
+form {
+
+    width: 100%;
+
+    .field {
+        position: relative;
+
+        @include breakpoint (tiny-m) {
+            width: 100%;
+        }
+    }
+
+    .field-half {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include breakpoint (tiny-m) {
+            flex-wrap: wrap;
+        }
+
+        .field {
+            width: 100%;
+            &:first-of-type {
+                margin: 0 10px 0 0;
+            }
+
+            @include breakpoint (tiny-m) {
+                &:first-of-type {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    //Error
+    .verify {
+        position: absolute;
+        top: calc(50% - 10px);
+        right: 30px;
+
+        &:before {
+            //content: '\f107';
+            display: inline-flex;
+            position: absolute;
+            color: #FFF;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        &.error {
+            &:before {
+                content: '\f00d';
+                color: #DD1754;
+            }
+
+        }
+        &.right {
+            &:before {
+                content: '\f00c';
+                color: #4caf50;
+            }
+
+        }
+    }
+   
+
+}
+
+// ====================================================================
+// Form Under Blue
+// ====================================================================
+form.under-blue {
+    font-size: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto 3rem auto;
+
+    @include breakpoint ('tiny-m') {
+        width: 100%;
+    }
+
+    &.dark {
+        input, textarea {
+            background-color: #1E242C;
+            color: #fff;
+            border: none;
+        }
+
+        label {
+            color: #fff
+        }
+
+        button,
+        input[type=reset],
+        input[type=submit] {
+            cursor: pointer;
+            outline: inherit;
+            background-color: rgba(30,36,44,0.71);
+            width: 15rem;
+        }
+    }
+
+    .field {
+        position: relative;
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+
+    input, textarea {
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        padding: 1rem 1rem;
+        background-color: #fff;
+        border: none;
+        border-bottom: 1px solid #eaeaea;
+        color: #343434;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    input:focus {
+        outline: 0
+    }
+
+    label {
+        font-size: 14px;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        -webkit-transition: .2s ease all;
+        -o-transition: .2s ease all;
+        transition: .2s ease all;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        pointer-events: none;
+        color: #343434;
+    }
+
+    label span {
+        font-size: 14px
+    }
+
+    input:focus~label,
+    textarea:focus~label,
+    input:read-only~label,
+    input:valid~label {
+        font-size: 12px;
+        top: -20px;
+        left: 0;
+        color: #00ccf3
+    }
+
+    textarea~label.active {
+        font-size: 12px;
+        top: -20px;
+        left: 0;
+        color: #00ccf3
+    }
+
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%
+    }
+
+    .bar:after,
+    .bar:before {
+        position: absolute;
+        bottom: 1px;
+        width: 0;
+        height: 2px;
+        content: '';
+        -webkit-transition: .2s ease all;
+        -moz-transition: .2s ease all;
+        -o-transition: .2s ease all;
+        transition: .2s ease all;
+        background: #00ccf3
+    }
+
+    .bar:before {
+        left: 50%
+    }
+
+    .bar:after {
+        right: 50%
+    }
+
+    input:focus~.bar:after,
+    input:focus~.bar:before,
+    textarea:focus~.bar:after,
+    textarea:focus~.bar:before {
+        width: 50%
+    }
+
+    button,
+    input[type=reset],
+    input[type=submit] {
+        cursor: pointer;
+        outline: inherit;
+        width: 15rem;
+    }
+
+}
+
+// ====================================================================
+// FORM CONTACT
+// ====================================================================
+form#form-contact {
+    width: 50%;
+    padding: 0;
+
+    @include breakpoint ('tiny-m') {
+        width: 100%;
+    }
+}

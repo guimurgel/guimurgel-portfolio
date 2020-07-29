@@ -1,0 +1,54 @@
+// ====================================================================
+// Fonts
+// ====================================================================
+
+// -------------------------------------
+// Caminhos
+// -------------------------------------
+
+$image-path: '../img';			// Caminho das imagens
+$font-path: '../fonts';			// Caminho das fontes
+
+// -------------------------------------
+// Montserrat Regular
+// -------------------------------------
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./#{$font-path}/montserrat/MontserratRegular.eot');
+    src: url('./#{$font-path}/montserrat/MontserratRegular.eot') format('embedded-opentype'),
+         url('./#{$font-path}/montserrat/MontserratRegular.woff2') format('woff2'),
+         url('./#{$font-path}/montserrat/MontserratRegular.woff') format('woff'),
+         url('./#{$font-path}/montserrat/MontserratRegular.ttf') format('truetype'),
+         url('./#{$font-path}/montserrat/MontserratRegular.svg#MontserratRegular') format('svg');
+         font-weight: normal;
+         font-style: normal; 
+}
+
+// -------------------------------------
+// Bebas Neue
+// -------------------------------------
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('./#{$font-path}/bebas-neue/BebasNeueRegular.eot');
+    src: url('./#{$font-path}/bebas-neue/BebasNeueRegular.eot') format('embedded-opentype'),
+         url('./#{$font-path}/bebas-neue/BebasNeueRegular.woff2') format('woff2'),
+         url('./#{$font-path}/bebas-neue/BebasNeueRegular.woff') format('woff'),
+         url('./#{$font-path}/bebas-neue/BebasNeueRegular.ttf') format('truetype'),
+         url('./#{$font-path}/bebas-neue/BebasNeueRegular.svg#BebasNeueRegular') format('svg');
+         font-weight: normal;
+         font-style: normal; 
+}
+
+
+// -------------------------------------
+// Padrao
+// -------------------------------------
+
+$font-family--primary    : "Montserrat";
+$headers-font-family     : 'Montserrat';
+$p-font-family           : 'Montserrat';
+$span-font-family        : 'Montserrat';
+
+$font-family--secondary  : ''

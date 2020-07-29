@@ -1,0 +1,331 @@
+{
+    "projects" : [
+        {
+            "id" : 1,
+            "company" : "Coral",
+            "name" : "Páginas Coloridas",
+            "cover": "paginas-coloridas-cover.jpg",
+            "page": "https://www.paginascoloridas.com.br/",
+            "description" : "",
+            "technologies": [
+                {
+                    "name": "html 5",
+                    "image": "",
+                    "class": "html"
+                },
+                {
+                    "name": "css 3",
+                    "image": "",
+                    "class": "css"
+                },
+                {
+                    "name": "JavaScript",
+                    "image": "",
+                    "class": "js"
+                },
+                {
+                    "name": "C#",
+                    "image": "",
+                    "class": "c-sharp"
+                }
+            ],
+            "images": [
+                "paginas-coloridas-destaque.jpg",
+                "paginas-coloridas-destaque.jpg"
+            ],
+            "filters": [
+                "web"
+            ]
+        },
+        {
+            "id" : 2,
+            "company" : "Claro",
+            "name" : "Giga Clube",
+            "cover": "giga-clube-cover.jpg",
+            "page": "https://www.gigaclube.com/",
+            "description" : "",
+            "technologies": [
+                {
+                    "name": "html 5",
+                    "image": "",
+                    "class": "html"
+                },
+                {
+                    "name": "css 3",
+                    "image": "",
+                    "class": "css"
+                },
+                {
+                    "name": "JavaScript",
+                    "image": "",
+                    "class": "js"
+                },
+                {
+                    "name": "C#",
+                    "image": "",
+                    "class": "c-sharp"
+                }
+            ],
+            "images": [
+                "giga-clube-destaque.jpg"
+            ],
+            "filters": [
+                "web"
+            ]
+        },
+        {
+            "id" : 3,
+            "company" : "Votorantim",
+            "name" : "Guia do Voto",
+            "cover": "guia-do-voto-cover.jpg",
+            "page": "https://guiadovoto.org.br/",
+            "description" : "",
+            "technologies": [
+                {
+                    "name": "html 5",
+                    "image": "",
+                    "class": "html"
+                },
+                {
+                    "name": "css 3",
+                    "image": "",
+                    "class": "css"
+                },
+                {
+                    "name": "JavaScript",
+                    "image": "",
+                    "class": "js"
+                },
+                {
+                    "name": "C#",
+                    "image": "",
+                    "class": "c-sharp"
+                },
+                {
+                    "name": "Cordova",
+                    "image": "",
+                    "class": "cordova"
+                }
+            ],
+            "images": [
+                "guia-do-voto-destaque.jpg"
+            ],
+            "filters": [
+                "web",
+                "apps"
+            ]
+        },
+        {
+            "id" : 4,
+            "company" : "Anbima",
+            "name" : "Relatório Anual 2017",
+            "cover": "anbima-cover.jpg",
+            "page": "http://www.anbima.com.br/relatorioanual/2017/",
+            "description" : "",
+            "technologies": [
+                {
+                    "name": "html 5",
+                    "image": "",
+                    "class": "html"
+                },
+                {
+                    "name": "css 3",
+                    "image": "",
+                    "class": "css"
+                },
+                {
+                    "name": "JavaScript",
+                    "image": "",
+                    "class": "js"
+                }
+            ],
+            "images": [
+                "anbima-destaque.jpg"
+            ],
+            "filters": [
+                "web"
+            ]
+        },
+        {
+            "id" : 5,
+            "company" : "",
+            "name" : "BichoMaps",
+            "cover": "bicho-maps-cover.jpg",
+            "page": "https://www.bichomaps.com.br",
+            "description" : "",
+            "technologies": [
+                {
+                    "name": "html 5",
+                    "image": "",
+                    "class": "html"
+                },
+                {
+                    "name": "css 3",
+                    "image": "",
+                    "class": "css"
+                },
+                {
+                    "name": "JavaScript",
+                    "image": "",
+                    "class": "js"
+                },
+                {
+                    "name": "React",
+                    "image": "",
+                    "class": "react"
+                }
+            ],
+            "images": [
+    
+            ],
+            "filters": [
+                "apps"
+            ]
+        },
+        {
+            "id" : 6,
+            "company" : "Brastemp Consul",
+            "name" : "Mais Top",
+            "cover": "mais-top-cover.jpg",
+            "page": "https://programamaistop.com.br/Login/",
+            "description" : "",
+            "technologies": [
+                {
+                    "name": "html 5",
+                    "image": "",
+                    "class": "html"
+                },
+                {
+                    "name": "css 3",
+                    "image": "",
+                    "class": "css"
+                },
+                {
+                    "name": "JavaScript",
+                    "image": "",
+                    "class": "js"
+                },
+                {
+                    "name": "C#",
+                    "image": "",
+                    "class": "c-sharp"
+                }
+            ],
+            "images": [
+    
+            ],
+            "filters": [
+                "web",
+                "apps"
+            ]
+        },
+        {
+            "id" : 7,
+            "company" : "",
+            "name" : "Stem Pharmaceutical",
+            "cover": "stem-pharmaceutical-cover.jpg",
+            "page": "http://www.stem.com.br/",
+            "description" : "",
+            "technologies": [
+                {
+                    "name": "html 5",
+                    "image": "",
+                    "class": "html"
+                },
+                {
+                    "name": "css 3",
+                    "image": "",
+                    "class": "css"
+                },
+                {
+                    "name": "JavaScript",
+                    "image": "",
+                    "class": "js"
+                },
+                {
+                    "name": "PHP",
+                    "image": "",
+                    "class": "php"
+                }
+            ],
+            "images": [
+                "stem-pharmaceutical-destaque.jpg"
+            ],
+            "filters": [
+                "web"
+            ]
+        },
+        {
+            "id" : 8,
+            "company" : "Petrobras",
+            "name" : "Motorista Deztaque",
+            "cover": "motorista-deztaque-cover.jpg",
+            "page": "https://motoristadeztaque.com.br/",
+            "description" : "",
+            "technologies": [
+                {
+                    "name": "html 5",
+                    "image": "",
+                    "class": "html"
+                },
+                {
+                    "name": "css 3",
+                    "image": "",
+                    "class": "css"
+                },
+                {
+                    "name": "JavaScript",
+                    "image": "",
+                    "class": "js"
+                },
+                {
+                    "name": "C#",
+                    "image": "",
+                    "class": "c-sharp"
+                }
+            ],
+            "images": [
+                "motorista-deztaque-destaque.jpg"
+            ],
+            "filters": [
+                "web"
+            ]
+        },
+        {
+            "id" : 9,
+            "company" : "",
+            "name" : "Direkte",
+            "cover": "direkte-cover.jpg",
+            "page": "",
+            "description" : "",
+            "technologies": [
+                {
+                    "name": "html 5",
+                    "image": "",
+                    "class": "html"
+                },
+                {
+                    "name": "css 3",
+                    "image": "",
+                    "class": "css"
+                },
+                {
+                    "name": "JavaScript",
+                    "image": "",
+                    "class": "js"
+                },
+                {
+                    "name": "NodeJS",
+                    "image": "",
+                    "class": "node-js"
+                }
+            ],
+            "images": [
+                "direkte-destaque.jpg"
+            ],
+            "filters": [
+                "web"
+            ]
+        }
+    ]
+}

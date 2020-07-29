@@ -1,0 +1,81 @@
+// ====================================================================
+// Authentication
+// ====================================================================
+section#authentication {
+
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin: 0 1rem;
+    z-index: 1;
+    width: auto;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    
+    &.visible {
+        opacity: 1;
+    }
+
+    //Actions
+    .actions {
+        display: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+
+        &.visible {
+            opacity: 1;
+            display: flex;
+            
+        }
+
+        a {
+            color: #eee;
+            font-size: 1.2rem;
+            padding: 0 1rem;
+        }
+    }
+
+    //User
+    .user {
+        display: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+
+        &.visible {
+            opacity: 1;
+            display: flex;
+        }
+
+        .avatar {
+
+        }
+
+        span.name {
+            color: #eee;
+            font-size: 1.2rem;
+            padding: 0 1rem;
+        }
+
+        a {
+            display: flex;
+            i {
+                color: #eee;
+                font-size: 1.2rem;
+                padding: 0 0;
+            }
+        }
+       
+    }
+
+}
